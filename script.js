@@ -2,24 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
 
-    // Function to show additional information on mouseover
-    function showAdditionalInfo(event) {
+    // Function to toggle additional information on click for small screens
+    function toggleAdditionalInfo(event) {
         const product = event.currentTarget;
-        const additionalInfo = product.querySelector('.additional-info');
-        additionalInfo.style.display = 'block';
+        const additionalInfo = product.querySelector('.product-info');
+        // Toggle the visibility of additional information
+        additionalInfo.classList.toggle('show');
     }
 
-    // Function to hide additional information on mouseout
-    function hideAdditionalInfo(event) {
-        const product = event.currentTarget;
-        const additionalInfo = product.querySelector('.additional-info');
-        additionalInfo.style.display = 'none';
-    }
-
-    // Event listeners for mouseover and mouseout
+    // Event listener for clicking on products to toggle additional information
     products.forEach(product => {
-        product.addEventListener('mouseover', showAdditionalInfo);
-        product.addEventListener('mouseout', hideAdditionalInfo);
+        product.addEventListener('click', toggleAdditionalInfo);
     });
 
     // Event listener for search input
