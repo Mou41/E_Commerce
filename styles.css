@@ -219,26 +219,33 @@ footer {
     display: none; /* Initially hide the navbar */
 }
 
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
+    /* Existing styles */
+
+    .navbar {
+        display: none; /* Initially hide the navbar on mobile */
+    }
+
     .menu-toggle {
-        display: flex;
-        flex-direction: column;
+        display: flex; /* Show the menu toggle button on mobile */
         cursor: pointer;
     }
 
-    #navbar.show {
-        display: block; /* Show the navbar when the class is added */
-    }
-
-    .hamburger.active:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-
-    .hamburger.active:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
+    /* Adjusted visibility when toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: block; /* Show the navbar when checkbox is checked */
     }
 }
+
+/* Adjusted navbar styles for larger screens */
+@media screen and (min-width: 769px) {
+    .navbar {
+        display: flex; /* Ensure the navbar is visible on larger screens */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide the menu toggle button on larger screens */
+    }
+}
+
