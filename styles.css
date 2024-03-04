@@ -187,6 +187,7 @@ footer {
 }
 
 /* Media queries for responsiveness */
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     header {
         padding: 10px;
