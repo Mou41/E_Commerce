@@ -1,3 +1,12 @@
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    const toggleBtn = document.querySelector('.toggle-btn');
+    if (toggleBtn.textContent === '☰') {
+        toggleBtn.textContent = '✕';
+    } else {
+        toggleBtn.textContent = '☰';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
