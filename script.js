@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('toggle');
     const navbar = document.querySelector('.navbar');
+    const products = document.querySelectorAll('.product'); // Assuming .product is the class for your product elements
+    const searchInput = document.getElementById('searchInput'); // Assuming 'searchInput' is the ID for your search input element
 
     // Event listener for menu toggle button
     menuToggle.addEventListener('change', function () {
@@ -9,11 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             navbar.style.display = 'none';
         }
-    });
-
-    // Event listener for click on product
-    products.forEach(product => {
-        product.addEventListener('click', toggleAdditionalInfo);
     });
 
     // Function to show additional information on mouseover
