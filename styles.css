@@ -201,85 +201,50 @@ footer {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
+    /* Other existing styles */
 
-    .logo img {
-        width: 60px;
-    }
-
+    /* Adjust the left margin for the navbar */
     .navbar {
-        display: none; /* Initially hide the navbar */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        margin-left: -10px; /* Adjusted margin for better alignment */
+        /* Other existing styles */
+        margin-left: 0; /* Adjusted margin */
     }
 
+    /* Show the navbar items as dropdown on hover */
     .navbar ul {
-        flex-direction: column;
+        display: none; /* Initially hide the navbar */
+        position: absolute;
+        top: 40px; /* Adjusted top position */
+        left: 0; /* Adjusted left position */
+        background-color: #333;
+        width: 100%;
     }
 
     .navbar li {
         margin-right: 0;
-    }
-
-    .menu-toggle {
-        display: block; /* Display the menu toggle button */
-    }
-
-    /* Show the navbar when the toggle is checked */
-    #toggle:checked ~ .navbar {
-        display: flex;
-    }
-
-    /* Hamburger menu styling */
-    .toggle-btn {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        position: relative;
-    }
-
-    .toggle-btn:before,
-    .toggle-btn:after {
-        content: '';
-        background-color: #fff;
-        width: 30px;
-        height: 4px;
-        position: absolute;
-        transition: transform 0.3s ease;
-    }
-
-    .toggle-btn:before {
-        top: 10px;
-    }
-
-    .toggle-btn:after {
-        top: 20px;
-    }
-
-    #toggle:checked + .toggle-btn:before {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    #toggle:checked + .toggle-btn:after {
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    #toggle:checked + .toggle-btn {
-        transform: rotate(135deg);
+        display: block; /* Display as block to fill the width */
+        padding: 10px 20px; /* Add padding for better readability */
     }
 
     /* Adjusted visibility when toggle is checked */
-    #toggle:checked ~ .navbar {
-        visibility: visible;
-        opacity: 1;
+    #toggle:checked ~ .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Dropdown animation */
+    .navbar li {
+        animation: fadeInDown 0.5s ease forwards; /* Apply fade-in animation */
+        opacity: 0; /* Initially hide the items */
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px); /* Move the items slightly upwards */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
