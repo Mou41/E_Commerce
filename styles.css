@@ -129,7 +129,8 @@ main {
 
 .product img {
     width: 100%;
-    height: auto;
+    height: 200px; /* Set a fixed height for the product images */
+    object-fit: cover; /* Ensure the image covers the entire container */
     border-radius: 10px;
 }
 
