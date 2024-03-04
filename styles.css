@@ -209,11 +209,11 @@ footer {
         justify-content: space-between;
         align-items: center;
         padding: 10px;
+        position: relative; /* Add relative positioning for proper stacking context */
     }
 
     /* Adjust navbar styling */
     .navbar {
-        display: none;
         flex-direction: column;
         position: absolute;
         top: 100%; /* Adjusted position */
@@ -221,6 +221,7 @@ footer {
         width: 100%;
         background-color: #555;
         z-index: 1;
+        display: none; /* Initially hide the navbar */
     }
 
     .navbar ul {
@@ -245,5 +246,10 @@ footer {
         top: 10px;
         right: 10px;
         z-index: 2;
+    }
+
+    /* Adjusted visibility when toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: flex;
     }
 }
