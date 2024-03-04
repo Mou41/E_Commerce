@@ -65,6 +65,7 @@ header {
     width: 30px;
     height: 30px;
     position: relative;
+    z-index: 2; /* Ensure toggle button is above other elements */
 }
 
 .toggle-btn:before,
@@ -199,7 +200,6 @@ footer {
     width: 30px;
     height: 30px;
 }
-
 
 @media screen and (max-width: 768px) {
     .navbar {
