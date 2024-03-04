@@ -218,7 +218,7 @@ footer {
         position: static;
         top: 100%; /* Adjusted position */
         align-items: center;
-        left: 0; /* Adjusted position */
+        right: 0; /* Adjusted position */
         width: 100%; /* Adjusting width to accommodate left shift */
         background-color: #555;
         z-index: 1;
@@ -248,7 +248,7 @@ footer {
         display: block;
         position: absolute;
         top: 10px;
-        left: 10px; /* Adjusting left position */
+        right: 10px; /* Adjusting left position */
         z-index: 2;
     }
 
