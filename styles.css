@@ -205,11 +205,6 @@ footer {
 @media screen and (max-width: 768px) {
     /* Existing styles */
     
-    .product-showcase {
-        overflow-x: auto; /* Allow horizontal scrolling for products */
-        padding-bottom: 20px; /* Add padding to prevent products from sliding too far down */
-    }
-
     .navbar {
         display: none; /* Initially hide the navbar */
         flex-direction: column;
@@ -235,11 +230,54 @@ footer {
     }
 
     .menu-toggle {
-        display: block; /* Ensure the menu toggle button is always visible */
+        position: relative;
     }
 
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         display: flex;
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
     }
 }
