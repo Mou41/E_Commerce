@@ -125,6 +125,7 @@ main {
     margin-right: 20px;
     scroll-snap-align: start;
     position: relative; /* Ensure relative positioning for absolute child */
+    text-align: center; /* Center align the product name */
 }
 
 .product img {
