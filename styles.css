@@ -215,10 +215,11 @@ footer {
     /* Adjust navbar styling */
     .navbar {
         flex-direction: column;
-        position: absolute;
+        position: static;
         top: 100%; /* Adjusted position */
+        align-items: center;
         left: 0; /* Adjusted position */
-        width: calc(100% - 10px); /* Adjusting width to accommodate left shift */
+        width: 100%; /* Adjusting width to accommodate left shift */
         background-color: #555;
         z-index: 1;
         display: none; /* Initially hide the navbar */
@@ -228,7 +229,7 @@ footer {
         list-style: none;
         padding: 0;
         text-align: center;
-        display: flex; /* Change to display flex */
+        display: block; /* Change to display flex */
         flex-direction: column; /* Change to column direction */
     }
 
