@@ -217,7 +217,7 @@ footer {
         flex-direction: column;
         position: absolute;
         top: 100%; /* Adjusted position */
-        left: 5px; /* Adjusting left position */
+        left: 0; /* Shifting the navbar 10px to the left */
         width: calc(100% - 10px); /* Adjusting width to accommodate left shift */
         background-color: #555;
         z-index: 1;
