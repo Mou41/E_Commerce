@@ -204,9 +204,13 @@ footer {
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     /* Existing styles */
-    
+
+    .menu-toggle {
+        display: block; /* Ensure the menu toggle button is always visible on smaller screens */
+    }
+
     .navbar {
-        display: none; /* Initially hide the navbar */
+        display: none; /* Initially hide the navbar on smaller screens */
         flex-direction: column;
         position: absolute;
         top: 50px; /* Adjusted top position */
@@ -215,22 +219,6 @@ footer {
         background-color: #333;
         margin-left: 0; /* Adjusted margin for better alignment */
         z-index: 1; /* Ensure the dropdown is above other content */
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
-    }
-
-    .navbar li {
-        margin-right: 0;
-        display: block; /* Display as block to fill the width */
-        padding: 10px 20px; /* Add padding for better readability */
-    }
-
-    .menu-toggle {
-        position: relative;
     }
 
     /* Adjusted visibility when toggle is checked */
@@ -249,6 +237,7 @@ footer {
         top: 50%;
         right: 20px;
         transform: translateY(-50%);
+        display: block; /* Ensure the toggle button is visible */
     }
 
     .toggle-btn:before,
