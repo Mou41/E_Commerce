@@ -193,6 +193,7 @@ footer {
 }
 
 /* Media queries for responsiveness */
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     header {
         padding: 10px;
@@ -203,18 +204,14 @@ footer {
     }
 
     .navbar {
-        /* Adjusted display property */
-        display: flex;
+        display: none; /* Initially hide the navbar */
         flex-direction: column;
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         background-color: #333;
-        /* Adjusted visibility */
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
+        margin-left: -10px; /* Adjusted margin for better alignment */
     }
 
     .navbar ul {
@@ -226,16 +223,57 @@ footer {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Display the menu toggle button */
+    }
+
+    /* Show the navbar when the toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: flex;
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
     }
 
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         visibility: visible;
         opacity: 1;
-    }
-
-    .product {
-        width: 100%;
     }
 }
