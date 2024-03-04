@@ -126,7 +126,6 @@ main {
     scroll-snap-align: start;
     position: relative; /* Ensure relative positioning for absolute child */
     text-align: center; /* Center align the product name */
-    cursor: pointer; /* Add cursor pointer for clickable effect */
 }
 
 .product img {
@@ -150,9 +149,9 @@ main {
     text-align: center;
     transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
     position: absolute; /* Position the product info */
-    bottom: -100%; /* Initially hide the product info off-screen */
-    left: 0; /* Adjusted position */
-    right: 0; /* Adjusted position */
+    bottom: 10px; /* Adjusted position */
+    left: 0px; /* Adjusted position */
+    right: 0px; /* Adjusted position */
     opacity: 0; /* Initially hide the product info */
 }
 
@@ -163,21 +162,51 @@ main {
 
 .product:hover .product-info {
     opacity: 1; /* Show product info on hover */
-    bottom: 0; /* Adjusted position */
 }
 
-/* Hide product info for small screens by default */
-@media screen and (max-width: 768px) {
-    .product-info {
-        display: none;
-    }
+/* Footer styles */
+footer {
+    background-color: #555;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute; /* Position the footer at the bottom of the page */
+    width: 100%;
+    bottom: 0;
+}
 
-    .menu-toggle {
-        display: block;
-    }
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Existing styles */
 
     .navbar {
-        display: none;
+        /* Remove display: none; to keep the menu initially visible */
         flex-direction: column;
         position: absolute;
         top: 50px; /* Adjusted top position */
@@ -186,6 +215,15 @@ main {
         background-color: #333;
         margin-left: 0; /* Adjusted margin for better alignment */
         z-index: 1; /* Ensure the dropdown is above other content */
+        /* Add new styles to initially hide the menu content */
+        overflow: hidden;
+        height: 0;
+        transition: height 0.3s ease;
+    }
+
+    .navbar:hover {
+        /* Adjust height to reveal menu content on hover */
+        height: auto;
     }
 
     .navbar ul {
@@ -200,9 +238,36 @@ main {
         padding: 10px 20px; /* Add padding for better readability */
     }
 
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
+    .menu-toggle {
+        display: block; /* Ensure the menu toggle button is always visible */
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
     }
 
     #toggle:checked + .toggle-btn:before {
@@ -220,5 +285,30 @@ main {
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         display: flex;
+    }
+
+    /* Adjusted product info and name */
+    .product-info {
+        bottom: -100%; /* Move the product info off-screen initially */
+        opacity: 0; /* Hide the product info */
+        transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+        text-align: center; /* Center align the text */
+    }
+
+    .product:hover .product-info {
+        /* Adjusted opacity and bottom position to show product info on hover */
+        opacity: 1;
+        bottom: 0;
+    }
+
+    .product-name {
+        /* Center the product name vertically below the image */
+        position: absolute;
+        bottom: 50%; /* Adjust based on the height of the product name */
+        left: 0;
+        right: 0;
+        margin-bottom: -10px; /* Adjust based on the height of the product name */
+        transform: translateY(50%); /* Center vertically */
+        font-weight: bold;
     }
 }
