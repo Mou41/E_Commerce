@@ -1,3 +1,4 @@
+
 /* Reset default browser styles */
 * {
     margin: 0;
@@ -201,63 +202,114 @@ footer {
 }
 
 
-/* Hamburger menu styling */
-.menu-toggle {
-    display: none; /* Initially hide the menu toggle button */
-}
-
-.hamburger {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-    margin: 5px 0;
-    transition: transform 0.3s ease;
-}
-
-/* Adjusted visibility when toggle is checked */
-#navbar {
-    display: none; /* Initially hide the navbar */
-}
-
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     /* Existing styles */
 
     .navbar {
-        display: none; /* Initially hide the navbar on mobile */
+        /* Remove display: none; to keep the menu initially visible */
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjusted top position */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        margin-left: 0; /* Adjusted margin for better alignment */
+        z-index: 1; /* Ensure the dropdown is above other content */
+        /* Add new styles to initially hide the menu content */
+        overflow: hidden;
+        height: 0;
+        transition: height 0.3s ease;
+    }
+
+    .navbar:hover {
+        /* Adjust height to reveal menu content on hover */
+        height: auto;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar li {
+        margin-right: 0;
+        display: block; /* Display as block to fill the width */
+        padding: 10px 20px; /* Add padding for better readability */
     }
 
     .menu-toggle {
-        display: flex; /* Show the menu toggle button on mobile */
+        display: block; /* Ensure the menu toggle button is always visible */
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
         cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
     }
 
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
-        display: block; /* Show the navbar when checkbox is checked */
-    }
-}
-
-/* Adjusted navbar styles for larger screens */
-@media screen and (min-width: 769px) {
-    .navbar {
-        display: flex; /* Ensure the navbar is visible on larger screens */
+        display: flex;
     }
 
-    .menu-toggle {
-        display: none; /* Hide the menu toggle button on larger screens */
+    /* Adjusted product info and name */
+    .product-info {
+        bottom: -100%; /* Move the product info off-screen initially */
+        opacity: 0; /* Hide the product info */
+        transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+        text-align: center; /* Center align the text */
     }
 
-    .navbar ul {
-        display: flex; /* Ensure navigation links are displayed horizontally */
+    .product:hover .product-info {
+        /* Adjusted opacity and bottom position to show product info on hover */
+        opacity: 1;
+        bottom: 0;
     }
 
-    .navbar li {
-        margin-right: 20px; /* Adjust spacing between navigation links */
-    }
-
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
+    .product-name {
+        /* Center the product name vertically below the image */
+        position: absolute;
+        bottom: 50%; /* Adjust based on the height of the product name */
+        left: 0;
+        right: 0;
+        margin-bottom: -10px; /* Adjust based on the height of the product name */
+        transform: translateY(50%); /* Center vertically */
+        font-weight: bold;
     }
 }
