@@ -5,9 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to toggle additional information on click for small screens
     function toggleAdditionalInfo(event) {
         const product = event.currentTarget;
-        const additionalInfo = product.querySelector('.product-info');
-        // Toggle the visibility of additional information
-        additionalInfo.classList.toggle('show');
+        const productInfo = product.querySelector('.product-info');
+        const productName = product.querySelector('.product-name');
+
+        // Toggle the visibility of product information
+        productInfo.classList.toggle('show');
+        
+        // Toggle the visibility of product name
+        productName.classList.toggle('hide');
     }
 
     // Event listener for clicking on products to toggle additional information
