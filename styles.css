@@ -146,6 +146,18 @@ main {
     margin-top: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
+    position: absolute; /* Position the product info */
+    bottom: 10px; /* Adjusted position */
+    left: 10px; /* Adjusted position */
+    right: 10px; /* Adjusted position */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Disable pointer events */
+    transition: opacity 0.3s ease; /* Add transition for smooth animation */
+}
+
+.product:hover .product-info {
+    opacity: 1; /* Show product info on hover */
+    pointer-events: auto; /* Enable pointer events */
 }
 
 .product .additional-info {
@@ -192,7 +204,6 @@ footer {
     height: 30px;
 }
 
-/* Media queries for responsiveness */
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     header {
