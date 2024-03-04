@@ -202,6 +202,7 @@ footer {
 
 
 /* Media query for mobile devices */
+/* Media query for mobile devices */
 @media screen and (max-width: 480px) {
     /* Adjust header layout */
     header {
@@ -217,7 +218,7 @@ footer {
         flex-direction: column;
         position: absolute;
         top: 100%; /* Adjusted position */
-        left: 0; /* Adjusted position */
+        right: 0; /* Adjusted position - changed from left to right */
         width: calc(100% - 10px); /* Adjusting width to accommodate left shift */
         background-color: #555;
         z-index: 1;
@@ -247,7 +248,7 @@ footer {
         display: block;
         position: absolute;
         top: 10px;
-        left: 10px; /* Adjusting left position */
+        right: 10px; /* Adjusting right position - changed from left to right */
         z-index: 2;
     }
 
@@ -256,4 +257,3 @@ footer {
         display: flex;
     }
 }
-
