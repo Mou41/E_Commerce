@@ -65,7 +65,6 @@ header {
     width: 30px;
     height: 30px;
     position: relative;
-    z-index: 2; /* Ensure toggle button is above other elements */
 }
 
 .toggle-btn:before,
@@ -201,6 +200,7 @@ footer {
     height: 30px;
 }
 
+
 @media screen and (max-width: 768px) {
     .navbar {
         display: none; /* Initially hide the navbar */
@@ -214,35 +214,13 @@ footer {
         z-index: 1; /* Ensure the dropdown is above other content */
     }
 
-    /* Adjusted styles for navbar links */
-    .navbar ul {
-        padding: 20px; /* Add padding for better spacing */
-    }
-
-    .navbar li {
-        margin-bottom: 10px; /* Add margin-bottom for better spacing */
-    }
-
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px; /* Adjust font size for better readability */
-    }
-
     .menu-toggle {
         position: relative;
     }
 
-    /* Display navbar when toggle is checked */
+    /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%; /* Adjusted top position */
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        z-index: 1;
     }
 
     /* Hamburger menu styling */
@@ -287,4 +265,13 @@ footer {
     #toggle:checked + .toggle-btn {
         transform: rotate(135deg);
     }
+    .product-info {
+    /* Existing styles */
+    /* Add the following */
+    display: none;
+}
+
+.product-info.show {
+    display: block;
+}
 }
