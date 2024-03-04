@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    // Function to toggle navigation links display
+    function toggleNavbar() {
+        navbar.classList.toggle('show');
+    }
+
+    // Event listener for toggling navigation links display
+    menuToggle.addEventListener('mouseover', toggleNavbar);
+    menuToggle.addEventListener('mouseout', toggleNavbar);
 
     // Function to toggle all content display
     function toggleAllContent(event) {
