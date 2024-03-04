@@ -1,22 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Menu toggle functionality
-    document.querySelector('.menu-toggle').addEventListener('click', function () {
-        const toggleBtn = document.querySelector('.toggle-btn');
-        if (toggleBtn.textContent === '☰') {
-            toggleBtn.textContent = '✕';
-        } else {
-            toggleBtn.textContent = '☰';
-        }
-
-        // Toggle navbar display
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('show');
-    });
-
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
     
-    // Function to toggle additional information on click
+     // Function to toggle additional information on click
     function toggleAdditionalInfo(event) {
         const product = event.currentTarget;
         const additionalInfo = product.querySelector('.product-info');
