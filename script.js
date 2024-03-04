@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
+    
+     // Function to toggle additional information on click
+    function toggleAdditionalInfo(event) {
+        const product = event.currentTarget;
+        const additionalInfo = product.querySelector('.product-info');
+        additionalInfo.classList.toggle('show');
+    }
+
+    // Event listener for click on product
+    products.forEach(product => {
+        product.addEventListener('click', toggleAdditionalInfo);
+    });
 
     // Function to show additional information on mouseover
     function showAdditionalInfo(event) {
