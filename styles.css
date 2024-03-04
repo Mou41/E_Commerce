@@ -265,4 +265,13 @@ footer {
     #toggle:checked + .toggle-btn {
         transform: rotate(135deg);
     }
+    .product-info {
+    /* Existing styles */
+    /* Add the following */
+    display: none;
+}
+
+.product-info.show {
+    display: block;
+}
 }
