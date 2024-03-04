@@ -204,14 +204,16 @@ footer {
 @media screen and (max-width: 768px) {
     .navbar {
         display: none; /* Initially hide the navbar */
-        flex-direction: column;
+        flex-direction: column; /* Change direction to stack items vertically */
         position: absolute;
-        top: 50px; /* Adjusted top position */
-        left: 0;
-        width: 100%;
+        top: 50px;
+        left: 20px; /* Adjusted position */
+        width: calc(100% - 40px); /* Adjusted width */
         background-color: #333;
-        margin-left: 0; /* Adjusted margin for better alignment */
-        z-index: 1; /* Ensure the dropdown is above other content */
+        z-index: 1;
+    }
+    .navbar li {
+        margin-bottom: 10px; /* Add margin between menu items */
     }
 
     .menu-toggle {
