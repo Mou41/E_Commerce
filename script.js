@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
-
-    // Function to toggle additional information on click
+    
+     // Function to toggle additional information on click
     function toggleAdditionalInfo(event) {
         const product = event.currentTarget;
         const additionalInfo = product.querySelector('.product-info');
