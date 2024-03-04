@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('toggle');
-    const navbar = document.querySelector('.navbar');
-
-    // Event listener for menu toggle button
-    menuToggle.addEventListener('change', function () {
-        if (this.checked) {
-            navbar.style.display = 'flex';
-        } else {
-            navbar.style.display = 'none';
-        }
-    });
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product');
+    
+    // Function to toggle additional information on click
+    function toggleAdditionalInfo(event) {
+        const product = event.currentTarget;
+        const additionalInfo = product.querySelector('.product-info'); // Corrected class name
+        additionalInfo.classList.toggle('show');
+    }
 
     // Event listener for click on product
     products.forEach(product => {
