@@ -213,6 +213,7 @@ footer {
         margin-left: 0; /* Adjusted margin for better alignment */
         z-index: 1; /* Ensure the dropdown is above other content */
     }
+
     /* Adjusted styles for navbar links */
     .navbar ul {
         padding: 20px; /* Add padding for better spacing */
@@ -286,13 +287,4 @@ footer {
     #toggle:checked + .toggle-btn {
         transform: rotate(135deg);
     }
-    .product-info {
-    /* Existing styles */
-    /* Add the following */
-    display: none;
-}
-
-.product-info.show {
-    display: block;
-}
 }
