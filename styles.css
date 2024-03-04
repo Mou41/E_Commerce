@@ -272,7 +272,7 @@ footer {
 }
 
 /* Show navbar on desktop */
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 769px) {
     .navbar {
         display: flex;
     }
