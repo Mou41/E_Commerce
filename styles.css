@@ -171,4 +171,54 @@ main {
     .product-info {
         display: none;
     }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjusted top position */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        margin-left: 0; /* Adjusted margin for better alignment */
+        z-index: 1; /* Ensure the dropdown is above other content */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar li {
+        margin-right: 0;
+        display: block; /* Display as block to fill the width */
+        padding: 10px 20px; /* Add padding for better readability */
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
+    }
+
+    /* Adjusted visibility when toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: flex;
+    }
 }
