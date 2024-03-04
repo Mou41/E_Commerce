@@ -199,3 +199,107 @@ footer {
     width: 30px;
     height: 30px;
 }
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Existing styles */
+
+    .navbar {
+        display: none; /* Initially hide the navbar */
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjusted top position */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        margin-left: 0; /* Adjusted margin for better alignment */
+        z-index: 1; /* Ensure the dropdown is above other content */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar li {
+        margin-right: 0;
+        display: block; /* Display as block to fill the width */
+        padding: 10px 20px; /* Add padding for better readability */
+    }
+
+    .menu-toggle {
+        display: block; /* Ensure the menu toggle button is always visible */
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
+    }
+
+    /* Adjusted visibility when toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: flex;
+    }
+
+    /* Adjusted product info and name */
+    .product-info {
+        bottom: -100%; /* Move the product info off-screen initially */
+        opacity: 0; /* Hide the product info */
+        transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+        text-align: center; /* Center align the text */
+    }
+
+    .product:hover .product-info {
+        /* Adjusted opacity and bottom position to show product info on hover */
+        opacity: 1;
+        bottom: 0;
+    }
+
+    .product-name {
+        /* Center the product name vertically below the image */
+        position: absolute;
+        bottom: 50%; /* Adjust based on the height of the product name */
+        left: 0;
+        right: 0;
+        margin-bottom: -10px; /* Adjust based on the height of the product name */
+        transform: translateY(50%); /* Center vertically */
+        font-weight: bold;
+    }
+}
