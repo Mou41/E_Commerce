@@ -201,79 +201,59 @@ footer {
 }
 
 
-@media screen and (max-width: 768px) {
-    .navbar {
-        display: none; /* Initially hide the navbar */
-        flex-direction: column; /* Change direction to stack items vertically */
-        position: absolute;
-        top: 50px;
-        left: 20px; /* Adjusted position */
-        width: calc(100% - 40px); /* Adjusted width */
-        background-color: #333;
-        z-index: 1;
-    }
-    .navbar li {
-        margin-bottom: 10px; /* Add margin between menu items */
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+    /* Adjust header layout */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: relative; /* Add relative positioning for proper stacking context */
     }
 
+    /* Adjust navbar styling */
+    .navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Adjusted position */
+        left: 0; /* Adjusted position */
+        width: calc(100% - 10px); /* Adjusting width to accommodate left shift */
+        background-color: #555;
+        z-index: 1;
+        display: none; /* Initially hide the navbar */
+    }
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        display: flex; /* Change to display flex */
+        flex-direction: column; /* Change to column direction */
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        display: block; /* Change to block to stack vertically */
+    }
+
+    /* Adjust menu toggle button styling */
     .menu-toggle {
-        position: relative;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px; /* Adjusting left position */
+        z-index: 2;
     }
 
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         display: flex;
     }
-
-    /* Hamburger menu styling */
-    .toggle-btn {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-    }
-
-    .toggle-btn:before,
-    .toggle-btn:after {
-        content: '';
-        background-color: #fff;
-        width: 30px;
-        height: 4px;
-        position: absolute;
-        transition: transform 0.3s ease;
-    }
-
-    .toggle-btn:before {
-        top: 10px;
-    }
-
-    .toggle-btn:after {
-        top: 20px;
-    }
-
-    #toggle:checked + .toggle-btn:before {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    #toggle:checked + .toggle-btn:after {
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    #toggle:checked + .toggle-btn {
-        transform: rotate(135deg);
-    }
-    .product-info {
-    /* Existing styles */
-    /* Add the following */
-    display: none;
 }
 
-.product-info.show {
-    display: block;
-}
-}
