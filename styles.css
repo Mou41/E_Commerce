@@ -247,5 +247,17 @@ footer {
     .menu-toggle {
         display: none; /* Hide the menu toggle button on larger screens */
     }
-}
 
+    .navbar ul {
+        display: flex; /* Ensure navigation links are displayed horizontally */
+    }
+
+    .navbar li {
+        margin-right: 20px; /* Adjust spacing between navigation links */
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
