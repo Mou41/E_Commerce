@@ -206,7 +206,7 @@ footer {
     /* Existing styles */
 
     .navbar {
-        display: none; /* Initially hide the navbar */
+        /* Remove display: none; to keep the menu initially visible */
         flex-direction: column;
         position: absolute;
         top: 50px; /* Adjusted top position */
@@ -215,6 +215,15 @@ footer {
         background-color: #333;
         margin-left: 0; /* Adjusted margin for better alignment */
         z-index: 1; /* Ensure the dropdown is above other content */
+        /* Add new styles to initially hide the menu content */
+        overflow: hidden;
+        height: 0;
+        transition: height 0.3s ease;
+    }
+
+    .navbar:hover {
+        /* Adjust height to reveal menu content on hover */
+        height: auto;
     }
 
     .navbar ul {
