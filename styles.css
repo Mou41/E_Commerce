@@ -199,6 +199,7 @@ footer {
     height: 30px;
 }
 
+
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     /* Other existing styles */
@@ -213,10 +214,11 @@ footer {
     .navbar ul {
         display: none; /* Initially hide the navbar */
         position: absolute;
-        top: 40px; /* Adjusted top position */
+        top: 60px; /* Adjusted top position */
         left: 0; /* Adjusted left position */
         background-color: #333;
         width: 100%;
+        z-index: 1; /* Ensure the dropdown is above other content */
     }
 
     .navbar li {
@@ -246,5 +248,11 @@ footer {
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    /* Ensure product name is always visible */
+    .product-info {
+        opacity: 1; /* Make product info always visible */
+        transition: none; /* Remove transition for immediate visibility */
     }
 }
