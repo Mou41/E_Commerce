@@ -168,17 +168,7 @@ main {
 
 /* Hide product info for small screens by default */
 @media screen and (max-width: 768px) {
-/* Hide product info for small screens by default */
-.product-info {
-    display: none;
-}
-
-.product-info.show {
-    display: block;
-}
-
-.product-name.hide {
-    display: none;
-}
-
+    .product-info {
+        display: none;
+    }
 }
