@@ -270,14 +270,3 @@ footer {
         transform: rotate(135deg);
     }
 }
-
-/* Show navbar on desktop */
-@media screen and (min-width: 769px) {
-    .navbar {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-}
