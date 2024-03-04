@@ -228,6 +228,8 @@ footer {
         list-style: none;
         padding: 0;
         text-align: center;
+        display: flex; /* Change to display flex */
+        flex-direction: column; /* Change to column direction */
     }
 
     .navbar li {
@@ -237,8 +239,8 @@ footer {
     .navbar a {
         color: #fff;
         text-decoration: none;
+        display: block; /* Change to block to stack vertically */
     }
-
 
     /* Adjust menu toggle button styling */
     .menu-toggle {
