@@ -201,114 +201,44 @@ footer {
 }
 
 
-/* Media queries for responsiveness */
+.menu-toggle {
+    display: none; /* Initially hide the menu toggle button */
+}
+
+.toggle-btn {
+    display: none; /* Initially hide the checkbox input */
+}
+
+/* Adjusted visibility when toggle is checked */
+#toggle:checked ~ .navbar {
+    display: block; /* Show the navbar when checkbox is checked */
+}
+
 @media screen and (max-width: 768px) {
-    /* Existing styles */
-
     .navbar {
-        /* Remove display: none; to keep the menu initially visible */
-        flex-direction: column;
-        position: absolute;
-        top: 50px; /* Adjusted top position */
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        margin-left: 0; /* Adjusted margin for better alignment */
-        z-index: 1; /* Ensure the dropdown is above other content */
-        /* Add new styles to initially hide the menu content */
-        overflow: hidden;
-        height: 0;
-        transition: height 0.3s ease;
+        display: none; /* Initially hide the navbar */
     }
 
-    .navbar:hover {
-        /* Adjust height to reveal menu content on hover */
-        height: auto;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
-    }
-
-    .navbar li {
-        margin-right: 0;
-        display: block; /* Display as block to fill the width */
-        padding: 10px 20px; /* Add padding for better readability */
-    }
-
+    /* Show menu toggle button for smaller screens */
     .menu-toggle {
-        display: block; /* Ensure the menu toggle button is always visible */
-    }
-
-    /* Hamburger menu styling */
-    .toggle-btn {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
+        display: block;
+        background: url('hamburger-icon.png') no-repeat;
         width: 30px;
         height: 30px;
-        position: relative;
+        cursor: pointer;
+        background-size: cover;
     }
 
-    .toggle-btn:before,
-    .toggle-btn:after {
-        content: '';
-        background-color: #fff;
-        width: 30px;
-        height: 4px;
+    /* Show the checkbox input for smaller screens */
+    .toggle-btn {
+        display: block;
         position: absolute;
-        transition: transform 0.3s ease;
-    }
-
-    .toggle-btn:before {
-        top: 10px;
-    }
-
-    .toggle-btn:after {
-        top: 20px;
-    }
-
-    #toggle:checked + .toggle-btn:before {
-        transform: translateY(6px) rotate(45deg);
-    }
-
-    #toggle:checked + .toggle-btn:after {
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    #toggle:checked + .toggle-btn {
-        transform: rotate(135deg);
+        top: -9999px;
+        left: -9999px;
     }
 
     /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
-        display: flex;
-    }
-
-    /* Adjusted product info and name */
-    .product-info {
-        bottom: -100%; /* Move the product info off-screen initially */
-        opacity: 0; /* Hide the product info */
-        transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
-        text-align: center; /* Center align the text */
-    }
-
-    .product:hover .product-info {
-        /* Adjusted opacity and bottom position to show product info on hover */
-        opacity: 1;
-        bottom: 0;
-    }
-
-    .product-name {
-        /* Center the product name vertically below the image */
-        position: absolute;
-        bottom: 50%; /* Adjust based on the height of the product name */
-        left: 0;
-        right: 0;
-        margin-bottom: -10px; /* Adjust based on the height of the product name */
-        transform: translateY(50%); /* Center vertically */
-        font-weight: bold;
+        display: block; /* Show the navbar when checkbox is checked */
     }
 }
