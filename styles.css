@@ -229,9 +229,8 @@ footer {
         padding: 10px 20px; /* Add padding for better readability */
     }
 
-    /* Adjusted visibility when toggle is checked */
-    #toggle:checked ~ .menu-toggle .navbar {
-        display: flex;
+    .menu-toggle {
+        display: block; /* Ensure the menu toggle button is always visible */
     }
 
     /* Hamburger menu styling */
@@ -272,5 +271,35 @@ footer {
 
     #toggle:checked + .toggle-btn {
         transform: rotate(135deg);
+    }
+
+    /* Adjusted visibility when toggle is checked */
+    #toggle:checked ~ .navbar {
+        display: flex;
+    }
+
+    /* Adjusted product info and name */
+    .product-info {
+        bottom: -100%; /* Move the product info off-screen initially */
+        opacity: 0; /* Hide the product info */
+        transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+        text-align: center; /* Center align the text */
+    }
+
+    .product:hover .product-info {
+        /* Adjusted opacity and bottom position to show product info on hover */
+        opacity: 1;
+        bottom: 0;
+    }
+
+    .product-name {
+        /* Center the product name vertically below the image */
+        position: absolute;
+        bottom: 50%; /* Adjust based on the height of the product name */
+        left: 0;
+        right: 0;
+        margin-bottom: -10px; /* Adjust based on the height of the product name */
+        transform: translateY(50%); /* Center vertically */
+        font-weight: bold;
     }
 }
