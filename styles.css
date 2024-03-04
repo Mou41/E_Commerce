@@ -131,6 +131,12 @@ main {
     height: 200px; /* Set a fixed height for the product images */
     object-fit: cover; /* Ensure the image covers the entire container */
     border-radius: 10px;
+    transition: width 0.3s, height 0.3s; /* Add transition for smooth animation */
+}
+
+.product:hover img {
+    width: 100%; /* Change width on hover */
+    height: 100%; /* Change height on hover */
 }
 
 .product-info {
@@ -186,7 +192,6 @@ footer {
     height: 30px;
 }
 
-/* Media queries for responsiveness */
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     header {
