@@ -149,14 +149,14 @@ main {
     transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
     position: absolute; /* Position the product info */
     bottom: 10px; /* Adjusted position */
-    left: 10px; /* Adjusted position */
-    right: 10px; /* Adjusted position */
+    left: 0px; /* Adjusted position */
+    right: 0px; /* Adjusted position */
     opacity: 0; /* Initially hide the product info */
 }
 
 .product-name {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .product:hover .product-info {
