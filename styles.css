@@ -201,44 +201,44 @@ footer {
 }
 
 
+/* Hamburger menu styling */
 .menu-toggle {
     display: none; /* Initially hide the menu toggle button */
 }
 
-.toggle-btn {
-    display: none; /* Initially hide the checkbox input */
+.hamburger {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
 }
 
 /* Adjusted visibility when toggle is checked */
-#toggle:checked ~ .navbar {
-    display: block; /* Show the navbar when checkbox is checked */
+#navbar {
+    display: none; /* Initially hide the navbar */
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        display: none; /* Initially hide the navbar */
-    }
-
-    /* Show menu toggle button for smaller screens */
     .menu-toggle {
-        display: block;
-        background: url('hamburger-icon.png') no-repeat;
-        width: 30px;
-        height: 30px;
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
-        background-size: cover;
     }
 
-    /* Show the checkbox input for smaller screens */
-    .toggle-btn {
-        display: block;
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+    #navbar.show {
+        display: block; /* Show the navbar when the class is added */
     }
 
-    /* Adjusted visibility when toggle is checked */
-    #toggle:checked ~ .navbar {
-        display: block; /* Show the navbar when checkbox is checked */
+    .hamburger.active:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
     }
 }
