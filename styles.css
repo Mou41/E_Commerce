@@ -209,27 +209,27 @@ footer {
         justify-content: space-between;
         align-items: center;
         padding: 10px;
-        position: relative;
+        position: relative; /* Add relative positioning for proper stacking context */
     }
 
     /* Adjust navbar styling */
     .navbar {
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        right: 0; /* Position navbar to the right */
-        width: 100%;
+        top: 100%; /* Adjusted position */
+        left: 0; /* Adjusted position */
+        width: calc(100% - 10px); /* Adjusting width to accommodate left shift */
         background-color: #555;
         z-index: 1;
-        display: none;
+        display: none; /* Initially hide the navbar */
     }
 
     .navbar ul {
         list-style: none;
         padding: 0;
         text-align: center;
-        display: flex;
-        flex-direction: column;
+        display: flex; /* Change to display flex */
+        flex-direction: column; /* Change to column direction */
     }
 
     .navbar li {
@@ -239,7 +239,7 @@ footer {
     .navbar a {
         color: #fff;
         text-decoration: none;
-        display: block;
+        display: block; /* Change to block to stack vertically */
     }
 
     /* Adjust menu toggle button styling */
@@ -247,21 +247,12 @@ footer {
         display: block;
         position: absolute;
         top: 10px;
-        right: 10px; /* Position menu toggle button to the right */
+        left: 10px; /* Adjusting left position */
         z-index: 2;
     }
 
+    /* Adjusted visibility when toggle is checked */
     #toggle:checked ~ .navbar {
         display: flex;
     }
-
-    /* Other existing styles */
-
-    /* Adjust product div width */
-    .product {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    /* Other adjustments as needed */
 }
