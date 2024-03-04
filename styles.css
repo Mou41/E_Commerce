@@ -202,23 +202,30 @@ footer {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
-    /* Other existing styles */
-
-    /* Adjust the left margin for the navbar */
-    .navbar {
-        /* Other existing styles */
-        margin-left: 0; /* Adjusted margin */
+    header {
+        padding: 10px;
     }
 
-    /* Show the navbar items as dropdown on hover */
-    .navbar ul {
+    .logo img {
+        width: 60px;
+    }
+
+    .navbar {
         display: none; /* Initially hide the navbar */
+        flex-direction: column;
         position: absolute;
-        top: 60px; /* Adjusted top position */
-        left: 0; /* Adjusted left position */
-        background-color: #333;
+        top: 50px; /* Adjusted top position */
+        left: 0;
         width: 100%;
+        background-color: #333;
+        margin-left: 0; /* Adjusted margin for better alignment */
         z-index: 1; /* Ensure the dropdown is above other content */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
     }
 
     .navbar li {
@@ -227,32 +234,52 @@ footer {
         padding: 10px 20px; /* Add padding for better readability */
     }
 
+    .menu-toggle {
+        display: block; /* Ensure the menu toggle button is always visible */
+    }
+
+    /* Hamburger menu styling */
+    .toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .toggle-btn:before,
+    .toggle-btn:after {
+        content: '';
+        background-color: #fff;
+        width: 30px;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:before {
+        top: 10px;
+    }
+
+    .toggle-btn:after {
+        top: 20px;
+    }
+
+    #toggle:checked + .toggle-btn:before {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #toggle:checked + .toggle-btn:after {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    #toggle:checked + .toggle-btn {
+        transform: rotate(135deg);
+    }
+
     /* Adjusted visibility when toggle is checked */
-    #toggle:checked ~ .navbar ul {
+    #toggle:checked ~ .navbar {
         display: flex;
-        flex-direction: column;
-    }
-
-    /* Dropdown animation */
-    .navbar li {
-        animation: fadeInDown 0.5s ease forwards; /* Apply fade-in animation */
-        opacity: 0; /* Initially hide the items */
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px); /* Move the items slightly upwards */
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Ensure product name is always visible */
-    .product-info {
-        opacity: 1; /* Make product info always visible */
-        transition: none; /* Remove transition for immediate visibility */
     }
 }
