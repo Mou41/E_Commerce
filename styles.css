@@ -124,6 +124,7 @@ main {
     width: 300px;
     margin-right: 20px;
     scroll-snap-align: start;
+    position: relative; /* Ensure relative positioning for absolute child */
 }
 
 .product img {
@@ -145,27 +146,16 @@ main {
     border-radius: 10px;
     margin-top: 10px;
     text-align: center;
-    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
     position: absolute; /* Position the product info */
     bottom: 10px; /* Adjusted position */
     left: 10px; /* Adjusted position */
     right: 10px; /* Adjusted position */
-    opacity: 0; /* Initially hidden */
-    pointer-events: none; /* Disable pointer events */
-    transition: opacity 0.3s ease; /* Add transition for smooth animation */
+    opacity: 0; /* Initially hide the product info */
 }
 
 .product:hover .product-info {
     opacity: 1; /* Show product info on hover */
-    pointer-events: auto; /* Enable pointer events */
-}
-
-.product .additional-info {
-    display: none;
-}
-
-.product-info:hover {
-    background-color: #ddd;
 }
 
 /* Footer styles */
