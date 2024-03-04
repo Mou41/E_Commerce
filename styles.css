@@ -205,8 +205,9 @@ footer {
 @media screen and (max-width: 768px) {
     /* Existing styles */
     
+    /* Remove or adjust this rule to prevent hiding the navbar */
     .navbar {
-        display: none; /* Initially hide the navbar */
+        /* display: none; */ /* Comment out or remove this line */
         flex-direction: column;
         position: absolute;
         top: 50px; /* Adjusted top position */
