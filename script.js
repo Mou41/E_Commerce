@@ -1,32 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product');
-    const menuToggle = document.getElementById('menuToggle');
-    const navbar = document.getElementById('navbar');
 
-    // Function to toggle navigation links display
-    function toggleNavbar() {
-        navbar.classList.toggle('show');
-    }
-
-    // Event listener for toggling navigation links display
-    menuToggle.addEventListener('mouseover', toggleNavbar);
-    menuToggle.addEventListener('mouseout', toggleNavbar);
-
-    // Function to toggle all content display
-    function toggleAllContent(event) {
+    // Function to show additional information on mouseover
+    function showAdditionalInfo(event) {
         const product = event.currentTarget;
         const additionalInfo = product.querySelector('.additional-info');
-        const productName = product.querySelector('h3');
-
-        // Toggle the display of additional info and price
-        additionalInfo.style.display = additionalInfo.style.display === 'block' ? 'none' : 'block';
-        productName.style.display = productName.style.display === 'block' ? 'none' : 'block';
+        additionalInfo.style.display = 'block';
     }
 
-    // Event listeners for toggling all content
+    // Function to hide additional information on mouseout
+    function hideAdditionalInfo(event) {
+        const product = event.currentTarget;
+        const additionalInfo = product.querySelector('.additional-info');
+        additionalInfo.style.display = 'none';
+    }
+
+    // Event listeners for mouseover and mouseout
     products.forEach(product => {
-        product.addEventListener('click', toggleAllContent);
+        product.addEventListener('mouseover', showAdditionalInfo);
+        product.addEventListener('mouseout', hideAdditionalInfo);
     });
 
     // Event listener for search input
